@@ -51,7 +51,7 @@ class APIClient extends _swaggerClient.default {
   }
 
   http(request) {
-    var csrftoken = (0, _utils.getCookie)("backoffice_csrftoken") ?? (0, _utils.getCookie)("csrftoken_v2");
+    var csrftoken = (0, _utils.getCookie)("backoffice_csrftoken") || (0, _utils.getCookie)("csrftoken_v2");
     return super.http(_objectSpread(_objectSpread({}, request), {}, {
       headers: _objectSpread({
         "X-CSRFToken": csrftoken == null ? "" : csrftoken
